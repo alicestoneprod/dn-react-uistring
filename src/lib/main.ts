@@ -35,6 +35,11 @@ interface SliceInfo {
   sliceIndex: number
 }
 
+interface UistringRecordI {
+  id: string
+  content: string
+}
+
 const colors: ColorI[] = [
   { name: Colors.d, color: "#ffffff" },
   { name: Colors.y, color: "#e6e309" },
@@ -102,4 +107,22 @@ const processUistringContent = (str: string, inputParams?: InputParamI[], direct
   return result
 }
 
-export { processUistringContent }
+const extractUistringData = (data: string): UistringRecordI[] => {
+  const regExp = /<message\s+mid="(\d+)"><!\[CDATA\[(.*?)\]\]><\/message>/g
+  const allData: UistringRecordI[] = []
+
+  const splittedData = data.split("\n")
+
+  splittedData.forEach((el) => {
+    const matches = el.matchAll(regExp)
+    for (const match of matches) {
+      const id = match[1]
+      const content = match[2]
+      allData.push({ id, content })
+    }
+  })
+
+  return allData
+}
+
+export { processUistringContent, extractUistringData }
