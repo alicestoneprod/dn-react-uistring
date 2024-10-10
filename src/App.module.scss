@@ -1,0 +1,120 @@
+.uistringPreview * {
+    span {
+        width: 100%;
+    }
+
+    font-size: 16px;
+}
+
+.uistringPreview {
+    border: 1px solid white;
+    width: 500px;
+    min-height: 200px;
+    height: fit-content;
+    padding: 20px;
+    font-weight: 500;
+}
+
+.mainPageCnt {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+& * {
+      font-family: "Inter";
+  }
+}
+
+.previewCnt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+
+    &:after {
+        position: absolute;
+        content: "";
+        height: 100%;
+        right: -50px;
+        top: 20px;
+        width: 5px;
+        background: white;
+    }
+}
+
+.previewTitle {
+    text-align: center;
+    color: white;
+    font-size: 32px;
+}
+
+.inputText {
+    border: 1px solid white;
+    width: 500px;
+    min-height: 200px;
+    background: white;
+    color: black;
+    padding: 20px;
+}
+
+.playgroundCnt {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+
+.editorCnt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.inputParams {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.addInputParam {
+    background: #1e8ffe;
+    height: 40px;
+    border-radius: 8px;
+    width: fit-content;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+
+
+    &:hover {
+        background: #73b2f7;
+        transition: background 0.3s ease;
+    }
+}
+
+.inputsParamCnt {
+    display: flex;
+    gap: 20px;
+
+}
+
+.paramInputIndex, .paramInputValue {
+    height: 40px;
+    border: 1px white solid;
+    border-radius: 8px;
+    padding: 8px;
+    color: white;
+}
+
+.inputTitle {
+    width: 500px;
+    font-size: 20px;
+    color: white;
+}

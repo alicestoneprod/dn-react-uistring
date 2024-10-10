@@ -1,44 +1,5 @@
 import "./index.css"
-enum Colors {
-  d = "d",
-  y = "y",
-  s = "s",
-  j = "j",
-  w = "w",
-  b = "b",
-  r = "r",
-  v = "v",
-  g = "g",
-  l = "l",
-  a = "a",
-  n = "n",
-  i = "i",
-  t = "t",
-  h = "h",
-  p = "p",
-  c = "c",
-  e = "e",
-}
-
-interface ColorI {
-  name: Colors
-  color: string
-}
-
-export interface InputParamI {
-  index: number
-  value: string | number
-}
-
-interface SliceInfo {
-  name: string
-  sliceIndex: number
-}
-
-interface UistringRecordI {
-  id: string
-  content: string
-}
+import { ColorI, Colors, InputParamI, SliceInfo, UistringRecordI } from "./types"
 
 const colors: ColorI[] = [
   { name: Colors.d, color: "#ffffff" },
@@ -76,29 +37,38 @@ const processUistringContent = (str: string, inputParams?: InputParamI[], direct
   let result = ""
   let lastSliceIndex = 0
 
-  // Processing colors
+  if (sliceInfos.length === 0) {
+    return `<span class='format-color-w'>${replacedStr}</span>`
+  }
 
+  // Colors processing
   sliceInfos.forEach((el, index: number) => {
     const nextSliceIndex = sliceInfos[index + 1]?.sliceIndex || replacedStr.length
-    const slicedStr = replacedStr.slice(lastSliceIndex, nextSliceIndex)
+
+    if (el?.sliceIndex && lastSliceIndex < el.sliceIndex) {
+      result += `<span class='format-color-w'>${replacedStr.slice(lastSliceIndex, el.sliceIndex)}</span>`
+    }
+
     if (el) {
-      result += slicedStr.replace(`#${el.name}`, `<span className='format-color-${el.name}'>`) + "</span>"
+      result += `<span class='format-color-${el.name}'>${replacedStr.slice(el.sliceIndex + 2, nextSliceIndex)}</span>`
     }
 
     lastSliceIndex = nextSliceIndex
   })
 
-  // Processing input params (used from .DNT)
+  if (lastSliceIndex < replacedStr.length) {
+    result += `<span class='format-color-w'>${replacedStr.slice(lastSliceIndex)}</span>`
+  }
 
-  if (Array.isArray(inputParams)) {
+  // processing inputParams (used from .DNT)
+  if (Array.isArray(inputParams) && inputParams?.length) {
     inputParams.forEach((el) => {
       result = result.replace(`{${el.index}}`, el.value.toString())
     })
   }
 
-  // Processing direct value placement
-
-  if (Array.isArray(directValues)) {
+  // processing  direct values (for example, %d)
+  if (Array.isArray(directValues) && directValues.length) {
     directValues.forEach((el) => {
       result = result.replace(`%d`, el.toString())
     })
