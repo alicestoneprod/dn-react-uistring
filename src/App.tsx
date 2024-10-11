@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { UistringDisplayComponent } from "lib/components"
 import s from "./App.module.scss"
-import "./App.css"
 
 function App() {
   const [previewValue, setPreviewValue] = useState("")
