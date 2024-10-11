@@ -1,4 +1,4 @@
-export enum Colors {
+enum Colors {
   d = "d",
   y = "y",
   s = "s",
@@ -19,22 +19,26 @@ export enum Colors {
   e = "e",
 }
 
-export interface ColorI {
+interface ColorI {
   name: Colors
   color: string
 }
 
-export interface InputParamI {
+interface InputParamI {
   index: number
   value: string | number
 }
 
-export interface SliceInfo {
+interface SliceInfo {
   name: string
   sliceIndex: number
 }
 
-export interface UistringRecordI {
-  id: string
+interface UistringRecordI {
+  mid: string
   content: string
 }
+
+export type { ColorI, InputParamI, SliceInfo, UistringRecordI }
+
+export { Colors }

@@ -19,7 +19,7 @@ export default defineConfig({
       input: Object.fromEntries(
         glob
           .sync("src/lib/**/*.{ts,tsx}", {
-            ignore: ["src/lib/**/*.d.ts"],
+            ignore: ["src/lib/**/*.d.ts", "src/lib/**/*.test.ts", "src/lib/**/mock.ts", "src/lib/**/*.spec.ts"],
           })
           .map((file) => [relative("src/lib", file.slice(0, file.length - extname(file).length)), resolve(__dirname, file)]),
       ),

@@ -9,9 +9,9 @@ const extractUistringData = (data: string): UistringRecordI[] => {
   splittedData.forEach((el) => {
     const matches = el.matchAll(regExp)
     for (const match of matches) {
-      const id = match[1]
+      const mid = match[1]
       const content = match[2]
-      allData.push({ id, content })
+      allData.push({ mid, content })
     }
   })
 

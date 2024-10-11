@@ -4,20 +4,20 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "dist-lib/main.js",
-  "types": "dist-lib/main.d.ts",
+  "main": "dist-lib/index.js",
+  "types": "dist-lib/index.d.ts",
   "files": [
     "dist-lib"
   ],
   "scripts": {
-    "dev": "vite  --config vite_frontend.config.ts",
-    "build:frontend": "tsc --p ./tsconfig.json && vite build --config vite_frontend.config.ts",
-    "build:lib": "tsc --p ./tsconfig-build.json && vite build",
+    "dev": "vite --port 3000 --config vite_frontend.config.ts",
+    "build:frontend": "npm run test && tsc --p ./tsconfig.json && vite build --config vite_frontend.config.ts",
+    "build:lib": "npm run test && tsc --p ./tsconfig-build.json && vite build",
+    "build:all": "npm run build:frontend && npm run build:lib",
     "test": "jest",
     "test:cov": "jest --coverage --watchAll",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "prepublishOnly": "npm run build:lib"
+    "preview": "vite preview"
   },
   "dependencies": {
     "html-react-parser": "^5.1.18"
@@ -46,6 +46,9 @@
       "/node_modules/",
       "setup-tests.ts",
       "vite-env.d.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/dist-lib/"
     ],
     "transform": {
       "^.+\\.tsx?$": "ts-jest"

@@ -25,3 +25,4 @@ dist-lib
 *.sw?
 
 coverage
+vite.config.ts.timestamp-*.mjs

@@ -1,7 +1,7 @@
 import { FC, HTMLAttributes } from "react"
 import parse from "html-react-parser"
-import { processUistringContent } from "lib"
-import { InputParamI } from "lib/types"
+import { InputParamI } from "../../types"
+import { processUistringContent } from "../../index.ts"
 
 interface UistringDisplayComponentI extends HTMLAttributes<HTMLDivElement> {
   className?: string
