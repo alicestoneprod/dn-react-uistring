@@ -11,7 +11,7 @@ export default defineConfig({
   build: {
     target: "es2021",
     lib: {
-      entry: resolve(__dirname, "src/lib/main.ts"),
+      entry: resolve(__dirname, "src/lib/index.ts"),
       formats: ["es"],
     },
     rollupOptions: {

@@ -2,8 +2,7 @@
     span {
         width: 100%;
     }
-
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .uistringPreview {
@@ -21,7 +20,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
+    flex-direction: column;
 & * {
       font-family: "Inter";
   }
@@ -47,7 +46,7 @@
 
 .previewTitle {
     text-align: center;
-    color: white;
+    color: #bebebe;
     font-size: 32px;
 }
 
@@ -58,6 +57,7 @@
     background: white;
     color: black;
     padding: 20px;
+    font-size: 18px;
 }
 
 .playgroundCnt {
@@ -71,7 +71,6 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-
 }
 
 .inputParams {
@@ -88,6 +87,7 @@
     width: fit-content;
     padding: 10px 15px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: background 0.3s ease;
@@ -99,22 +99,16 @@
     }
 }
 
-.inputsParamCnt {
+.footerTitle {
+    font-size: 32px;
+    color: white;
+}
+
+.footer {
     display: flex;
-    gap: 20px;
-
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.paramInputIndex, .paramInputValue {
-    height: 40px;
-    border: 1px white solid;
-    border-radius: 8px;
-    padding: 8px;
-    color: white;
-}
-
-.inputTitle {
-    width: 500px;
-    font-size: 20px;
-    color: white;
-}

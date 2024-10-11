@@ -3,5 +3,14 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  "compilerOptions": {
+    "baseUrl": "src",
+    "target": "ES2021",
+    "lib": ["ES2021", "DOM"],
+    "paths": {
+      "lib/*": ["src/lib/*"]
+    },
+    "esModuleInterop": true
+  }
 }
