@@ -4,10 +4,14 @@ import dts from "vite-plugin-dts"
 import react from "@vitejs/plugin-react"
 import { libInjectCss } from "vite-plugin-lib-inject-css"
 import { glob } from "glob"
+import copy from "rollup-plugin-copy";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), libInjectCss(), dts({ include: ["lib"] })],
+  plugins: [react(), libInjectCss(), dts({ include: ["lib"] }), copy({
+    targets: [{ src: "package.json", dest: "dist-lib" }, { src: "README.md", dest: "dist-lib" }],
+    hook: "writeBundle",
+  })],
   build: {
     target: "es2021",
     lib: {
