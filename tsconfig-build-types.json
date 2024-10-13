@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src/lib/**/*"],
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./dist-lib/types",
+    "outDir": "dist-lib",
+    "moduleResolution": "Node",
+    "emitDeclarationOnly": true,
+    "declarationMap": true,
+    "strict": false,
+    "jsx": "react-jsx",
+    "allowImportingTsExtensions": true
+  }
+}
+
+// Config for building library with types.

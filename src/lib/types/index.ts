@@ -1,23 +1,4 @@
-enum Colors {
-  d = "d",
-  y = "y",
-  s = "s",
-  j = "j",
-  w = "w",
-  b = "b",
-  r = "r",
-  v = "v",
-  g = "g",
-  l = "l",
-  a = "a",
-  n = "n",
-  i = "i",
-  t = "t",
-  h = "h",
-  p = "p",
-  c = "c",
-  e = "e",
-}
+import { Colors } from "../utils/processUistringContent/processUistringContent"
 
 interface ColorI {
   name: Colors
@@ -40,5 +21,3 @@ interface UistringRecordI {
 }
 
 export type { ColorI, InputParamI, SliceInfo, UistringRecordI }
-
-export { Colors }

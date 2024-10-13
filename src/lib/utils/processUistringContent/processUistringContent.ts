@@ -1,4 +1,25 @@
-import { ColorI, Colors, InputParamI, SliceInfo } from "../../types"
+import { ColorI, InputParamI, SliceInfo } from "../../types"
+
+export enum Colors {
+  d = "d",
+  y = "y",
+  s = "s",
+  j = "j",
+  w = "w",
+  b = "b",
+  r = "r",
+  v = "v",
+  g = "g",
+  l = "l",
+  a = "a",
+  n = "n",
+  i = "i",
+  t = "t",
+  h = "h",
+  p = "p",
+  c = "c",
+  e = "e",
+}
 
 const colors: ColorI[] = [
   { name: Colors.d, color: "#ffffff" },
