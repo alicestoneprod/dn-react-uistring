@@ -21,10 +21,6 @@
     "preview": "vite preview",
     "gen": "npx generate-react-cli component --type=default"
   },
-  "dependencies": {
-    "framer-motion": "^11.11.9",
-    "html-react-parser": "^5.1.18"
-  },
   "jest": {
     "testEnvironment": "jsdom",
     "setupFilesAfterEnv": [
@@ -57,13 +53,20 @@
       "^.+\\.tsx?$": "ts-jest"
     }
   },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "dependencies": {
+    "framer-motion": "^11.11.9",
+    "html-react-parser": "^5.1.18"
+  },
   "peerDependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.9.5"
+  },
   "devDependencies": {
     "@babel/core": "^7.25.8",
     "@babel/preset-env": "^7.25.8",
