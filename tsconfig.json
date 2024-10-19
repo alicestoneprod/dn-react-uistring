@@ -9,7 +9,10 @@
     "target": "ES2021",
     "lib": ["ES2021", "DOM"],
     "paths": {
-      "lib/*": ["src/lib/*"]
+      "lib/*": ["src/lib/*"],
+      "components/*": ["src/components/*"],
+      "pages/*": ["src/pages/*"],
+      "styles/*": ["src/styles/*"]
     },
     "esModuleInterop": true
   }

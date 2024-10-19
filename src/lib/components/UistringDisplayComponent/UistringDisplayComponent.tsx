@@ -2,6 +2,8 @@ import { FC, HTMLAttributes } from "react"
 import parse from "html-react-parser"
 import { InputParamI } from "../../types"
 import { processUistringContent } from "../../index.ts"
+import clsx from 'clsx';
+import s from './UistringDisplayComponent.module.scss'
 
 interface UistringDisplayComponentI extends HTMLAttributes<HTMLDivElement> {
   className?: string
@@ -15,7 +17,7 @@ const UistringDisplayComponent: FC<UistringDisplayComponentI> = (props) => {
   const htmlString = processUistringContent(value, inputParams, directValues)
 
   return (
-    <div className={className} {...restProps}>
+    <div className={clsx(className, s.uistringDisplayCnt)} {...restProps}>
       {parse(htmlString)}
     </div>
   )

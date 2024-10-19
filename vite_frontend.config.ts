@@ -1,6 +1,5 @@
 import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
-import * as path from "path"
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,6 +7,16 @@ export default defineConfig({
   resolve: {
     alias: {
       lib: "/src/lib",
+      components: "/src/components",
+      pages: "/src/pages",
+      styles: "/src/styles",
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern-compiler",
+      },
     },
   },
 })
