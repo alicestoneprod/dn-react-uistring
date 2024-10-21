@@ -1,0 +1,7 @@
+src
+node_modules
+public
+src
+templates
+.prettier.cjs
+index.html
