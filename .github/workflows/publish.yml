@@ -36,7 +36,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: tonpm
         run: npm publish --access public --no-git-checks
-        working-directory: dist-lib
+        working-directory: ../dist-lib
         env:
           GITHUB_TOKEN: ${{ secrets.GT_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
