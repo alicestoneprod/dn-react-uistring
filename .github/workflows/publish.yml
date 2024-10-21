@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
+      - uses: npm/action-setup@v2
         with:
           version: 8
       - uses: actions/setup-node@v3
@@ -25,7 +25,7 @@ jobs:
           node-version: 20.x
           cache: "npm"
 
-      - run: pnpm install --no-frozen-lockfile
+      - run: npm install --no-frozen-lockfile
       - name: Create Release Pull Request or Publish
         id: changesets
         uses: changesets/action@v1
