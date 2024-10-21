@@ -18,6 +18,7 @@
     "build:lib": "npm run test && tsc --p ./tsconfig-build.json && vite build",
     "build:lib-types": "npm run test && tsc --p ./tsconfig-build-types.json && vite build",
     "build:all": "npm run build:frontend && npm run build:lib",
+    "release": "npm publish --no-git-checks",
     "test": "jest",
     "test:cov": "jest --coverage --watchAll",
     "lint": "eslint .",
