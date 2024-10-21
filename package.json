@@ -1,9 +1,12 @@
 {
   "name": "dn-react-uistring",
   "description": "DN-React-Uistring is a library for the best uistring.xml (Dragon Nest) preview.",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
+  "repository": {
+    "url": "https://github.com/alicestoneprod/dn-react-uistring"
+  },
   "main": "./dist/index.js",
   "types": "./types/index.d.ts",
   "files": [
