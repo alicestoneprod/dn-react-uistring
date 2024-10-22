@@ -35,8 +35,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GT_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: check location
+        run: pwd
+
+      - name: check files list
+        run: ls
+
       - name: tonpm
-        run: cd dist-lib && npm publish --access public --no-git-checks
+        run: ls && npm publish --access public --no-git-checks
         env:
           GITHUB_TOKEN: ${{ secrets.GT_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
