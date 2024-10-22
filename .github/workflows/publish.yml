@@ -26,6 +26,8 @@ jobs:
           cache: "npm"
 
       - run: npm install --no-frozen-lockfile
+      - run: npm run build:lib-types
+
       - name: Create Release Pull Request or Publish
         id: changesets
         uses: changesets/action@v1
@@ -42,7 +44,7 @@ jobs:
         run: ls
 
       - name: tonpm
-        run: ls && npm publish --access public --no-git-checks
+        run: npm publish ./dist-lib --access public --no-git-checks
         env:
           GITHUB_TOKEN: ${{ secrets.GT_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
