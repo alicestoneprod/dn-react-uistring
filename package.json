@@ -2,7 +2,7 @@
   "name": "dn-react-uistring",
   "description": "DN-React-Uistring is a library for the best uistring.xml (Dragon Nest) preview.",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "repository": {
     "url": "git+https://github.com/alicestoneprod/dn-react-uistring.git"
@@ -10,7 +10,8 @@
   "main": "./dist/index.js",
   "types": "./types/index.d.ts",
   "files": [
-    "dist", "types"
+    "dist",
+    "types"
   ],
   "scripts": {
     "dev": "vite --port 3000 --config vite_frontend.config.ts",
