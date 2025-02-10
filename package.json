@@ -27,10 +27,6 @@
     "gen": "npx generate-react-cli component --type=default"
   },
   "jest": {
-    "testEnvironment": "jsdom",
-    "setupFilesAfterEnv": [
-      "<rootDir>/setup-test.ts"
-    ],
     "moduleNameMapper": {
       "\\.(css|less|scss|sass)$": "identity-obj-proxy",
       "\\.(jpg|jpeg|png|gif|webp|svg)$": "<rootDir>/__mocks__/fileMock.js"
@@ -62,7 +58,11 @@
     "**/*.css"
   ],
   "dependencies": {
-    "html-react-parser": "^5.1.18"
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "html-react-parser": "^5.1.18",
+    "jest-environment-jsdom": "^29.7.0"
   },
   "peerDependencies": {
     "react": ">= 18.0.0 || < 19.0.0",
